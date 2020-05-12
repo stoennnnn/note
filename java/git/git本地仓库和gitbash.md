@@ -47,7 +47,6 @@ git add README.md
 git commit -m "first commit"
 git remote add origin git@gitee.com:stoennnnn/csc-klm-exam-rep.git
 git push -u origin master
-test
 ```
 
 ###### 4.2 本地仓库不为空

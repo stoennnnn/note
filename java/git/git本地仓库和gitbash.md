@@ -1,20 +1,12 @@
-### **一.创建版本库repository**
+### **一.提交代码到远程仓库**
 
-==git init==
+#### 1.创建远端repository
 
-执行后该目录就可以被git管理
-
-![img](image/image/clipboard-1587886966962.png)
-
-### *二.创建并设置SSH KEY**
-
-利用远程仓库托管代码，同时别人也能看到，好处多多。
-
-#### 2.1.登录github，创建远端repository
+登录github或者码云，创建一个空的repository
 
 ![img](D:/Program%20Files/YoudaoNote/qqA4E7E97418CE0DD165BC3306788DE9EC/d0fee00eacfd487f9eb7cd7324c46a3f/clipboard.png)
 
-#### 2.2.创建SSH KEY
+#### 2.生成公钥信息
 
 由于本地的git仓库和远程的github仓库之间的传输是通过SSH加密的，所以需要创建SSH KEY
 
@@ -34,17 +26,43 @@ $ ssh-keygen -t rsa -C"2672575920@qq.com"
 
 第一个是私钥，第二个是公钥
 
-#### 2.3.登录GitHub，setting里面新增一个SSH KEY
+#### 3.配置公钥
+
+登录远程仓库，填入生成得公钥信息
 
 ![img](image/image/clipboard-1587887094554.png)
 
 把id_rsa.pub里面的字符串粘贴进去
 
-#### 2.4 直接git clone
+#### 4.本地仓库关联远程仓库
+
+###### 4.1 本地仓库为空
+
+```bash
+mkdir csc-klm-exam-rep
+cd csc-klm-exam-rep
+git init
+touch README.md
+git add README.md
+git commit -m "first commit"
+git remote add origin git@gitee.com:stoennnnn/csc-klm-exam-rep.git
+git push -u origin master
+test
+```
+
+###### 4.2 本地仓库不为空
+
+```bash
+cd existing_git_repo
+git remote add origin git@gitee.com:stone2672575920/csc-klm-exam-rep.git
+git push -u origin master
+```
+
+#### 5 直接git clone
 
 ​	在对应目录下打开gitbash，执行git clone拉取项目直接可以提交
 
-### **三.git bash 提交代码**
+### **二.git bash 提交代码**
 
 1.最好先切换到当前项目路径下
 
@@ -74,11 +92,11 @@ $ ssh-keygen -t rsa -C"2672575920@qq.com"
 - 先拉代码并合并代码，多人协作必要步骤
 - 如果此时本地有不需要提交的文件冲突可以 git reset --hard 返回到git add的版本后再pull
 
-**git push**
+#### **git push**
 
 ​	提交代码，因为本来在提交的分支下，所以不需要指定远程分支路径
 
-### **四 常见的命令**
+### **三 常见的命令**
 
 #### **git reset**
 

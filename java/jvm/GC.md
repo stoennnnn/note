@@ -330,7 +330,7 @@ PhantomReference phantomRef = new PhantomReference(a,queue);
 
 ![img](image/clipboard-1587715596903.png)
 
-# 面试题---------------
+### 面试题---------------
 
 ### 1.垃圾回收算法
 
